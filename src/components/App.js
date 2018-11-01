@@ -1,14 +1,20 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import React, {Component} from 'react'
+import {BrowserRouter as Router} from 'react-router-dom'
+
+import NavBar from './Layout/Navbar'
+import GlobalStyles from './Layout/GlobalStyles/GlobalStyles'
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
+    <Router>
+      <> 
+        <NavBar>
           <h1>Yo</h1>
-        </div>
-      </Router>
+        </NavBar>
+        <GlobalStyles/>
+      </>
+    </Router>
     );
   }
 }
