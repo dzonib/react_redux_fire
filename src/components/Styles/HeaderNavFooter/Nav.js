@@ -1,21 +1,24 @@
 import styled from 'styled-components'
 
-const Nav = styled.ul `
+const Nav = styled.ul`
 margin: 0;
   display: flex;
   grid-template-columns: 1fr auto;
   font-size: 2rem;
   justify-self: end;
+  
   a {
     display: flex;
+    font-weight: 900;
     align-items: center;
     position: relative;
     text-transform: uppercase;
     padding: 1rem 3rem;
+    cursor: pointer;
     &:before {
       content: '';
       width: 2px;
-      background: ${props => props.theme.lightGrey};
+      background: ${(props) => props.theme.lightGrey};
       height: 100%;
       left: 0;
       position: absolute;
@@ -23,27 +26,20 @@ margin: 0;
       top: 0;
       bottom: 0;
     }
-    &:after {
-      height: 2px;
-      background: red;
-      content: '';
-      width: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      transition: width 0.4s;
-      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
-      left: 50%;
-      margin-top: 2rem;
-      &:hover,
-    &:focus {
-      outline: none;
-      &:after {
-        width: calc(100% - 60px);
+  }
+
+  @media(max-width: ${(props) => props.theme.mobile}) {
+      width: 100%;
+      justify-content: center;
+      border-top: 1px solid ${(props) => props.theme.lightGrey};
+      font-size: 1rem;
+      margin: 0;
+      a {
+        margin: 0;
+        padding: 0 10px;
       }
     }
-  }
+    
 `
 
-export {
-  Nav
-}
+export { Nav }

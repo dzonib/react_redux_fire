@@ -1,25 +1,33 @@
-import React, {Component} from 'react'
-import {BrowserRouter as Router} from 'react-router-dom'
-import {ThemeProvider} from 'styled-components'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
 
 import Header from './Layout/Header'
 import GlobalStyles from './Styles/GlobalStyles/GlobalStyles'
-import {theme} from './Styles/GlobalStyles/Theme'
+import { theme } from './Styles/GlobalStyles/Theme'
+import Dashboard from './Dashboard/Dashboard'
+import ProjectDetails from './Projects/ProjectDetails'
+import SignIn from './Auth/SignIn';
+
 
 class App extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <Router>
-          <> <Header>
-            <h1>Yo</h1>
-          </Header>
-          <GlobalStyles/>
-        </>
-      </Router>
-    </ThemeProvider>
-    );
-  }
+	render() {
+		return (
+			<Router>
+				<ThemeProvider theme={theme}>
+					<>
+						<Header />
+						<Switch>
+							<Route exact path="/" component={Dashboard} />
+							<Route path="/project/:id" component={ProjectDetails} />
+							<Route path="/signin" component={SignIn} />
+						</Switch>
+						<GlobalStyles />
+					</>
+				</ThemeProvider>
+			</Router>
+		)
+	}
 }
 
-export default App;
+export default App
