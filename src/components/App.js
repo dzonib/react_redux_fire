@@ -8,6 +8,8 @@ import { theme } from './Styles/GlobalStyles/Theme'
 import Dashboard from './Dashboard/Dashboard'
 import ProjectDetails from './Projects/ProjectDetails'
 import SignIn from './Auth/SignIn';
+import SignUp from './Auth/SignUp';
+import CreateProject from './Projects/CreateProject';
 
 
 class App extends Component {
@@ -21,6 +23,8 @@ class App extends Component {
 							<Route exact path="/" component={Dashboard} />
 							<Route path="/project/:id" component={ProjectDetails} />
 							<Route path="/signin" component={SignIn} />
+							<Route path="/signup" component={SignUp} />
+							<Route path="/create" component={CreateProject} />
 						</Switch>
 						<GlobalStyles />
 					</>

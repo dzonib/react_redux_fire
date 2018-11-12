@@ -15,7 +15,7 @@ const Header = () => {
 
 
 			<Nav>
-				<Link to="/newproject">New Project</Link>
+				<Link to="/create">New Project</Link>
 				<Link to="/signin">Signin</Link>
 				<Link to="/signup">Signup</Link>
 				<Link to="/signin">Login</Link>
