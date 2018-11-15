@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { createProject } from '../../redux/actions/projectActions'
+
 import StyledForm from '../Styles/Auth/StyledForm'
 
 class CreateProject extends Component {
@@ -12,19 +15,13 @@ class CreateProject extends Component {
 	}
 
 	handleSubmit = (e) => {
-		const { title, content } = this.state
-
 		e.preventDefault()
 
-		const project = {
-			title,
-			content
-		}
-
-		console.log(project)
+		this.props.createProject(this.state)
 	}
 
 	render() {
+		console.log(this.props)
 		return (
 			<StyledForm onSubmit={this.handleSubmit}>
 				<h1>Create new project</h1>
@@ -43,4 +40,4 @@ class CreateProject extends Component {
 	}
 }
 
-export default CreateProject
+export default connect(null, { createProject })(CreateProject)

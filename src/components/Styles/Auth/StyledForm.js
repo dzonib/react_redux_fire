@@ -15,12 +15,23 @@ const StyledForm = styled.form`
 	}
 	margin: 0 auto;
 	input {
+		color: ${props => props.theme.black};
 		font-size: 90%;
 		height: 30px;
 		width: 100%;
-		outline-color: ${(props) => props.theme.black};
+		outline: solid 1px ${props => props.theme.black};
 		&:focus {
-			outline: ${(props) => props.theme.red};
+			outline: solid 1.2px ${props => props.theme.black};
+		}
+	}
+	textarea {
+		width: 100%;
+		color: ${props => props.theme.black};
+		height: 80px;
+		font-size: 19px;
+		outline: solid 1px ${props => props.theme.black};
+		&:focus {
+			outline: solid 1.2px ${props => props.theme.black};
 		}
 	}
 	label {

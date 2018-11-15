@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { Logo } from '../Styles/HeaderNavFooter/Logo'
 import { StyledHeader } from '../Styles/HeaderNavFooter/StyledHeader'
 import { Nav } from '../Styles/HeaderNavFooter/Nav'
-import { AvatarImage } from '../Styles/HeaderNavFooter/AvatarImage'
+import SignedInLinks from './SignedInLinks';
+import SignedOutLinks from './SignedOutLinks';
 
 const Header = () => {
 	return (
@@ -15,11 +16,12 @@ const Header = () => {
 
 
 			<Nav>
-				<Link to="/create">New Project</Link>
-				<Link to="/signin">Signin</Link>
-				<Link to="/signup">Signup</Link>
+				{/* <Link to="/create">New Project</Link>
 				<Link to="/signin">Login</Link>
-			  <AvatarImage>NN</AvatarImage>
+				<Link to="/signup">Signup</Link>
+				<Link to="/signin">Logout</Link> */}
+				<SignedOutLinks />
+				<SignedInLinks />
 			</Nav>
 		</StyledHeader>
 	)

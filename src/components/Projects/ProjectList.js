@@ -3,12 +3,16 @@ import React from 'react'
 import StyledProject from '../Styles/Projects/StyledProject'
 import ProjectSummary from './ProjectSummary';
 
-const PrijectList = () => {
+const PrijectList = ({projects}) => {
+
 	return (
 		<StyledProject>
-			<ProjectSummary />
-			<ProjectSummary />
-			<ProjectSummary />
+			{
+				projects &&
+				projects.map((project) => {
+					return <ProjectSummary key={project.id} {...project}/>
+				})
+			}
 		</StyledProject>
 	)
 }

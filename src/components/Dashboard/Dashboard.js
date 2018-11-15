@@ -1,30 +1,41 @@
 import React, { Component } from 'react'
 import { StyledDashboard } from '../Styles/Dashboard/StyledDashboard'
+import { connect } from 'react-redux'
 
-import Notifications from './Notifications';
+import Notifications from './Notifications'
 import ProjectList from '../Projects/ProjectList'
 
 class Dashboard extends Component {
-    render() {
-        return (
-            <StyledDashboard>
-                <div style={{
-                    height: '200px',
-                    width: '100%',
-                }}>
-                    <ProjectList />
-                </div>
-                <div style={{
-                    height: '200px',
-                    width: '200px',
-                    background: 'purple'
-                }}>
-                    <Notifications />
-                </div>
-            </StyledDashboard>
-        )
+	render() {
+        const {projects} = this.props;
+		return (
+			<StyledDashboard>
+				<div
+					style={{
+						height: '200px',
+						width: '100%'
+					}}
+				>
+					<ProjectList projects={projects} />
+				</div>
+				<div
+					style={{
+						height: '200px',
+						width: '200px',
+						background: 'purple'
+					}}
+				>
+					<Notifications />
+				</div>
+			</StyledDashboard>
+		)
+	}
+}
+
+const mapStateToProps = state => {
+    return {
+        projects: state.project.projects
     }
 }
 
-
-export default Dashboard
+export default connect(mapStateToProps)(Dashboard)
