@@ -21,7 +21,6 @@ class CreateProject extends Component {
 	}
 
 	render() {
-		console.log(this.props)
 		return (
 			<StyledForm onSubmit={this.handleSubmit}>
 				<h1>Create new project</h1>

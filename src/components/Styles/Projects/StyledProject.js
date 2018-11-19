@@ -5,6 +5,8 @@ const StyledProject = styled.section `
     justify-content: center;
     color: ${props => props.theme.black};
     font-size: 2rem;
+    height: 600px;
+    overflow-y: scroll;
     h2 {
         margin: 5rem 0 1rem 0;
     }

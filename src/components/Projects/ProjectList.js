@@ -1,18 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import StyledProject from '../Styles/Projects/StyledProject'
-import ProjectSummary from './ProjectSummary';
+import ProjectSummary from './ProjectSummary'
 
-const PrijectList = ({projects}) => {
-
+const PrijectList = ({ projects }) => {
 	return (
 		<StyledProject>
-			{
-				projects &&
+			{projects &&
 				projects.map((project) => {
-					return <ProjectSummary key={project.id} {...project}/>
-				})
-			}
+					return (
+						<Link to={`/project/${project.id}`} key={project.id}>
+							<ProjectSummary  {...project} />
+						</Link>
+					)
+				})}
 		</StyledProject>
 	)
 }
