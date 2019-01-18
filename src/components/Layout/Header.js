@@ -11,15 +11,11 @@ const Header = () => {
 	return (
 		<StyledHeader>
 			<Logo>
-				<Link to="/">Mario Crap</Link>
+				<Link to="/">Mario World</Link>
 			</Logo>
 
 
 			<Nav>
-				{/* <Link to="/create">New Project</Link>
-				<Link to="/signin">Login</Link>
-				<Link to="/signup">Signup</Link>
-				<Link to="/signin">Logout</Link> */}
 				<SignedOutLinks />
 				<SignedInLinks />
 			</Nav>

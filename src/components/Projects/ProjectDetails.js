@@ -2,12 +2,26 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+import StyledProjectDetails from '../Styles/Projects/StyledProjectDetails';
 
 const ProectDetails = (props) => {
 	const { project } = props
+	console.log(project)
 
 	if (project) {
-		return <div>blbalba id is {props.match.params.id}</div>
+		return <StyledProjectDetails>
+			<h1>{project.title}</h1>
+			<p>{project.content}</p>
+			<hr/>
+			<p className="posted-by">Posted by: {project.authorFirstName} {project.authorLastName}</p>
+			<div>2nd seprember 2001</div>
+		</StyledProjectDetails>
+	} else {
+		return (
+			<StyledProjectDetails>
+				Loading project...
+			</StyledProjectDetails>
+		)
 	}
 }
 

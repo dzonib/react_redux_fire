@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyledDashboard } from '../Styles/Dashboard/StyledDashboard'
 import { connect } from 'react-redux'
-import { firebaseConnect, firestoreConnect } from 'react-redux-firebase'
+import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 
 import Notifications from './Notifications'
